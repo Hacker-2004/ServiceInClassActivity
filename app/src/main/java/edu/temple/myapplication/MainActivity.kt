@@ -34,13 +34,14 @@ class MainActivity : AppCompatActivity() {
             if(!isConnected) return@setOnClickListener
             if(!timerBinder.isRunning && !timerBinder.paused){
                 timerBinder.start(10)
+                findViewById<Button>(R.id.startButton).text = "Pause"
             } else if (timerBinder.isRunning){
                 timerBinder.pause()
+                findViewById<Button>(R.id.startButton).text = "Un Pause"
             } else if (timerBinder.paused){
                 timerBinder.pause()
+                findViewById<Button>(R.id.startButton).text = "pause"
             }
-
-
         }
         
         findViewById<Button>(R.id.stopButton).setOnClickListener {
